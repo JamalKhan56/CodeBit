@@ -1,0 +1,258 @@
+/* Navbar.module.css */
+
+/* Main navbar container - using header semantic element */
+.navbar {
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid var(--navbar-border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.navbarContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+/* Brand/Logo section */
+.navbarBrand {
+  flex-shrink: 0;
+}
+
+.brandLink {
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+}
+
+.logoText {
+  font-size: 24px;
+  font-weight: 700;
+  color: #6ae06a;
+  letter-spacing: 1px;
+  margin: 0;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.brandLink:hover .logoText {
+  
+  color: #195443;
+}
+
+/* Navigation menu section - using proper list structure */
+.navbarMenu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-grow: 1;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation links */
+.navLink {
+  
+  color: #6ae06a;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 8px 0;
+  position: relative;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.navLink:hover {
+  color: #195443;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  color: #195443;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+/* Auth section */
+.navbarAuth {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* Register button specific styles */
+.registerBtn {
+  background-color: #6ae06a !important;
+  color: white !important;
+  padding: 8px 20px !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.registerBtn:hover {
+  background-color: #195443 !important;
+  transform: translateY(-1px);
+  color: #6ae06a !important;
+  font-weight: 600;
+}
+
+.registerBtn::after {
+  display: none;
+}
+
+/* Theme Toggle Button */
+.themeToggle {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #6ae06a;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.themeToggle:hover {
+  color: #195443;
+  background-color: rgba(106, 224, 106, 0.1);
+}
+
+/* Active link styles */
+.active {
+  color: #195443 !important;
+}
+
+.active::after {
+  width: 100% !important;
+  background-color: #195443 !important;
+}
+
+.activeRegister {
+  background-color: #195443 !important;
+  color: #6ae06a !important;
+}
+
+/* Remove ALL borders and outlines */
+.navLink,
+.brandLink,
+.registerBtn,
+.themeToggle {
+  border: none !important;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.navLink:focus,
+.navLink:active,
+.navLink:visited,
+.brandLink:focus,
+.brandLink:active,
+.brandLink:visited,
+.registerBtn:focus,
+.registerBtn:active,
+.registerBtn:visited,
+.themeToggle:focus,
+.themeToggle:active {
+  border: none !important;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Optional: Add subtle focus for accessibility (only for keyboard users) */
+.navLink:focus-visible,
+.brandLink:focus-visible,
+.themeToggle:focus-visible {
+  box-shadow: 0 0 0 1px rgba(23, 61, 50, 0.3);
+  border-radius: 2px;
+}
+
+/* Ensure no default styling interferes */
+.navLink *,
+.brandLink *,
+.registerBtn *,
+.themeToggle * {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 15px;
+  }
+  
+  .navbarContainer {
+    height: 60px;
+  }
+  
+  .navbarMenu {
+    gap: 20px;
+  }
+  
+  .navLink {
+    font-size: 13px;
+  }
+  
+  .logoText {
+    font-size: 20px;
+  }
+  
+  .navbarAuth {
+    gap: 15px;
+  }
+  
+  .registerBtn {
+    padding: 6px 15px !important;
+    font-size: 13px;
+  }
+
+  .themeToggle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .themeToggle svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbarMenu {
+    display: none;
+  }
+  
+  .navbarContainer {
+    justify-content: space-between;
+  }
+}

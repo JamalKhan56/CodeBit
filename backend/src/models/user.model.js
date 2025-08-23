@@ -33,13 +33,7 @@ const userSchema = new Schema(
       type: String, // cloudinary url
       
     },
-    bookshelf: {
-      read: [{ type: Schema.Types.ObjectId, ref: "Book" }],
-      currentlyReading: [{ type: Schema.Types.ObjectId, ref: "Book" }],
-      wantToRead: [{ type: Schema.Types.ObjectId, ref: "Book" }],
-    },
-    favoriteGenres: [{ type: String }],
-    preferredAuthors: [{ type: String }],
+    
     password: {
       type: String,
       required: [true, "Password is required"],

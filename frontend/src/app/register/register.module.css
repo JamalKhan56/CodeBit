@@ -1,0 +1,301 @@
+/* Register Page Styles - Ultra Minimal Design */
+
+.registerContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, #059669 0%, #195443 100%);
+}
+
+.registerCard {
+  background: var(--bg-primary);
+  border-radius: 0;
+  padding: 1.25rem;
+  width: 100%;
+  max-width: 380px;
+  position: relative;
+  border: 1px solid var(--navbar-border);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.registerHeader {
+  margin-bottom: 0.75rem;
+}
+
+.registerTitle {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #10b981;
+  margin-bottom: 0.125rem;
+  letter-spacing: -0.025em;
+}
+
+.registerSubtitle {
+  color: #6b7280;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+.errorMessage {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 0.5rem;
+  border-radius: 0;
+  margin-bottom: 0.75rem;
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.625rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.formGroupFull {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  grid-column: 1 / -1;
+}
+
+.label {
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.75rem;
+}
+
+.input {
+  padding: 0.5rem;
+  border: 1px solid var(--navbar-border);
+  border-radius: 0;
+  font-size: 0.8125rem;
+  transition: all 0.2s ease;
+  background-color: var(--bg-primary);
+  color: #374151;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.08);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.fileInput {
+  padding: 0.5rem;
+  border: 1px dashed var(--navbar-border);
+  border-radius: 0;
+  font-size: 0.75rem;
+  transition: all 0.2s ease;
+  background-color: var(--bg-secondary);
+  color: #374151;
+  cursor: pointer;
+  text-align: center;
+}
+
+.fileInput:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.08);
+}
+
+.fileInput:hover {
+  border-color: #10b981;
+  background-color: var(--bg-secondary);
+}
+
+.fileName {
+  font-size: 0.6875rem;
+  color: #10b981;
+  margin-top: 0.125rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  padding: 0.625rem;
+  border: none;
+  border-radius: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.25rem;
+  letter-spacing: 0.025em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.submitButton:hover:not(:disabled) {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.submitButton:disabled {
+  background: #9ca3af;
+  color: #ffffff;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.loginLink {
+  text-align: center;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--navbar-border);
+}
+
+.loginLink p {
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.link {
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #059669;
+  text-decoration: underline;
+}
+
+.optional {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Dark theme specific styles */
+[data-theme="dark"] .registerTitle {
+  color: #10b981;
+}
+
+[data-theme="dark"] .registerSubtitle {
+  color: #a0a0a0;
+}
+
+[data-theme="dark"] .label {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .input {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .input::placeholder {
+  color: #9ca3af;
+}
+
+[data-theme="dark"] .fileInput {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .fileInput:hover {
+  background-color: #4b5563;
+}
+
+[data-theme="dark"] .loginLink p {
+  color: #a0a0a0;
+}
+
+[data-theme="dark"] .optional {
+  color: #9ca3af;
+}
+
+[data-theme="dark"] .errorMessage {
+  background-color: #2d1b1b;
+  border-color: #5a2d2d;
+  color: #ff6b6b;
+}
+
+[data-theme="dark"] .registerCard {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive design */
+@media (min-width: 601px) {
+  .registerCard {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .registerContainer {
+    padding: 0.5rem;
+  }
+  
+  .registerCard {
+    padding: 1.25rem;
+    max-width: 100%;
+  }
+  
+  .registerTitle {
+    font-size: 1.375rem;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .formGroupFull {
+    grid-column: 1;
+  }
+  
+  .registerForm {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .registerCard {
+    padding: 1rem;
+  }
+  
+  .registerTitle {
+    font-size: 1.25rem;
+  }
+  
+  .input,
+  .fileInput {
+    padding: 0.5rem;
+    font-size: 0.8125rem;
+  }
+  
+  .submitButton {
+    padding: 0.625rem;
+  }
+}
