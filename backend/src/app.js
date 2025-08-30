@@ -20,10 +20,14 @@ app.use(cookieParser())
 // routes impoort
 
 import userRouter from "./routes/user.routes.js";
+import blogRouter from "./routes/blog.routes.js";
+
 
 
 // routes declaration
 app.use("/api/v1/user", userRouter);
+app.use("/api/v1/blogs", blogRouter);
+
 
 
 
